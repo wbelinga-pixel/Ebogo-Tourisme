@@ -5,11 +5,14 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { routing } from "@/i18n/routing";
+import { alternatesFor, siteUrl } from "@/lib/seo";
 import "../globals.css";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  // Police variable : poids fixé à 400 partout (jamais 600/700), l'axe
+  // optical size (opsz) porte seul la présence des grands titres.
+  axes: ["opsz"],
   variable: "--font-fraunces",
   display: "swap",
 });
@@ -33,8 +36,10 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "site" });
   return {
+    metadataBase: new URL(siteUrl),
     title: { default: t("name"), template: `%s | ${t("name")}` },
     description: t("tagline"),
+    alternates: alternatesFor("/"),
   };
 }
 

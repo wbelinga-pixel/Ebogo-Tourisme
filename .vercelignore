@@ -1,0 +1,6 @@
+# Archive de la v1 statique (HTML/CSS/JS) : conservée dans le dépôt pour
+# référence et pour son contenu (tarifs, contacts), jamais déployée.
+# Next.js ne la sert de toute façon sous aucune route, mais on l'exclut
+# aussi explicitement de l'upload de build Vercel.
+legacy-static-site/
+BRIEF.md

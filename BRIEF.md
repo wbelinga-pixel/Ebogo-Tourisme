@@ -10,7 +10,7 @@ Critère de réussite : un voyageur arrivé par une recherche Google repart avec
 
 À trancher avant de coder :
 
-- Qui porte le site (communauté du village, commune de Mengueme, opérateur privé, association) ? Cela change le ton et la page « À propos ».
+- ~~Qui porte le site (communauté du village, commune de Mengueme, opérateur privé, association) ?~~ **Tranché : le porteur est la Commune (collectivité territoriale de Mengueme), pas la communauté villageoise ni une association informelle.** Ton institutionnel/officiel pour la page « Le village » et le pied de page — pas un ton communautaire ou associatif.
 - Réservation réelle (paiement en ligne, Mobile Money) ou simple demande (WhatsApp + formulaire) ? **Recommandation : demande simple en v1**, paiement plus tard.
 
 ## Ce qu'il y a à Ebogo
@@ -128,7 +128,7 @@ Le code peut démarrer sans, avec des placeholders. Le site ne peut pas être pu
 
 Informations relevées en ligne et non vérifiées sur place : à confirmer avant publication.
 
-## Contenu déjà disponible (V1 du site, oct. 2025)
+## Contenu déjà disponible (V1 du site)
 
 Le premier site (statique, archivé dans `legacy-static-site/`) contenait déjà une grille tarifaire complète fournie directement par l'exploitant du site (document « EBOGO ECOTOURISTIC CENTRE SCHEDULE OF SERVICES »), 18 photos réelles d'Ebogo, et les coordonnées de contact suivantes :
 
@@ -136,4 +136,16 @@ Le premier site (statique, archivé dans `legacy-static-site/`) contenait déjà
 - Email : sitetouristiquedebogo1@gmail.com
 - Lieu : Ebogo, Commune de Mengueme, Région du Centre, Cameroun
 
-Ces éléments sont réutilisés comme contenu de départ (plus fiables que les tarifs contradictoires trouvés en ligne), avec leur date de mise à jour d'origine indiquée. Ils restent à reconfirmer avant republication, comme demandé ci-dessus.
+Ces éléments sont réutilisés comme contenu de départ (plus fiables que les tarifs contradictoires trouvés en ligne). Deux points de vigilance identifiés en relisant ce contenu de départ :
+
+**Date des tarifs.** Aucune date n'accompagne la grille tarifaire dans les documents fournis (ni dans le `.docx` d'origine, ni dans `SOURCES_ET_CONTENU.md`). La plus ancienne trace dans l'historique git de ce dépôt remonte au 2026-08-19 (soit environ 5 semaines avant cette refonte) — c'est la seule date vérifiable qu'on ait, mais elle ne dit rien de la date de création réelle du document côté exploitant, qui peut être bien plus ancienne. Le fichier de contenu des tarifs (étape 2) porte un champ `derniere_maj` fixé à cette date connue, explicitement labellisé comme « date d'intégration constatée, pas date de validité confirmée par l'exploitant » — à faire confirmer avant publication, comme demandé dans la checklist ci-dessus.
+
+**Résolution des photos.** Vérification faite sur les 18 fichiers de `public/images/` :
+
+| Photos | Dimensions | Usage recommandé |
+| --- | --- | --- |
+| `giant-tree`, `rapids`, `culture-river`, `grotte-refuge`, `grotte-sousbois`, `rock-refuge` | 1800 px de large | Correctes pour un hero plein écran sur écran standard (1080p) ; un peu tendues sur très grand écran ou Retina/4K. |
+| `campement`, `canoe-guide`, `canoe-reflection`, `canoe-village`, `culture-dance`, `river-calm` | 1012-1200 px de large (portrait) | Bonnes pour des cartes/vignettes, pas pour un hero pleine largeur. |
+| `hero-river`, `aerial-forest`, `aerial-nyong`, `nyong-island` | 1024×768 | **Trop petites pour un hero plein écran** — visiblement floues si étirées sur desktop. À ne pas utiliser en fond plein écran tant que des originaux plus grands ne sont pas fournis. |
+
+Aucune de ces photos n'atteint une définition vraiment « HD » (2400 px+) au sens strict pour un hero plein écran sur grand moniteur — c'est un compromis acceptable pour démarrer, pas la qualité finale visée. **Si des fichiers originaux existent quelque part (téléphone, appareil photo, cloud du prestataire), les récupérer et les déposer dans `public/images/` avant l'étape 3 (page d'accueil)** plutôt qu'après la mise en page, pour éviter de recadrer une seconde fois.
