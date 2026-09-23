@@ -20,6 +20,13 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 96px; }
+@media (max-width: 680px) {
+  section[id] { scroll-margin-top: 78px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
@@ -51,7 +58,8 @@ button, input, textarea, select { font: inherit; }
 .nav-links { display: flex; align-items: center; gap: 18px; font-weight: 700; color: var(--forest-800); font-size: 14px; }
 .nav-links a { padding: 10px 4px; position: relative; }
 .nav-links a:after { content: ""; position: absolute; left: 4px; right: 4px; bottom: 4px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
-.nav-links a:hover:after { transform: scaleX(1); }
+.nav-links a:hover:after, .nav-links a.active:after { transform: scaleX(1); }
+.nav-links a.active { color: var(--forest-950); }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
 .lang-btn {
   border: 1px solid var(--line); background: #fff; color: var(--forest-800); border-radius: 999px;
@@ -282,3 +290,14 @@ td:nth-child(2), td:nth-child(3), td:nth-child(4) { color: var(--muted); font-we
   .lightbox { padding: 16px; }
   #lightboxCaption { left: 16px; right: 16px; transform: none; text-align: center; }
 }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in-view { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+.form-status { margin-top: 14px; font-weight: 800; color: var(--forest-800); min-height: 20px; }
+.form-status.error { color: #b3261e; }
+.booking-form input:invalid:not(:placeholder-shown), .booking-form input.invalid { border-color: #b3261e; }

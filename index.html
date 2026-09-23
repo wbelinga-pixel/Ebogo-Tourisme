@@ -4,11 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ebogo Tourisme | Escale écotouristique au Cameroun</title>
-    <meta name="description" content="Site touristique d'Ebogo, Région du Centre Cameroun : balades en pirogue, sous-bois, grottes, campings, activités culturelles et réservations." />
+    <meta name="description" content="Balades en pirogue sur le Nyong, sous-bois, grottes, arbres millénaires, campings et activités culturelles à Ebogo (Région du Centre, Cameroun). Réservez votre visite en famille, groupe ou entreprise." />
+    <meta name="keywords" content="Ebogo, tourisme Cameroun, écotourisme, fleuve Nyong, pirogue, Mengueme, Région du Centre, activités culturelles, camping Cameroun" />
+    <meta name="author" content="Ebogo Tourisme" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.ebogo-tourisme.cm/" />
+
+    <!-- Réseaux sociaux / partage -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ebogo Tourisme" />
+    <meta property="og:title" content="Ebogo Tourisme | Escale écotouristique au Cameroun" />
+    <meta property="og:description" content="Balades en pirogue sur le Nyong, sous-bois, grottes, arbres millénaires, campings et activités culturelles à Ebogo, Cameroun." />
+    <meta property="og:image" content="https://www.ebogo-tourisme.cm/assets/images/hero-river.webp" />
+    <meta property="og:url" content="https://www.ebogo-tourisme.cm/" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ebogo Tourisme | Escale écotouristique au Cameroun" />
+    <meta name="twitter:description" content="Balades en pirogue sur le Nyong, sous-bois, grottes, arbres millénaires et campings à Ebogo, Cameroun." />
+    <meta name="twitter:image" content="https://www.ebogo-tourisme.cm/assets/images/hero-river.webp" />
+
+    <meta name="theme-color" content="#0b2319" />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/icons/favicon.svg" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "Ebogo Tourisme",
+      "description": "Escale écotouristique au bord du fleuve Nyong : balades en pirogue, sous-bois, grottes, arbres remarquables, campements et activités culturelles.",
+      "image": "https://www.ebogo-tourisme.cm/assets/images/hero-river.webp",
+      "url": "https://www.ebogo-tourisme.cm/",
+      "telephone": "+237677379697",
+      "email": "sitetouristiquedebogo1@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ebogo, Mengueme",
+        "addressRegion": "Région du Centre",
+        "addressCountry": "CM"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 3.3167,
+        "longitude": 11.55
+      },
+      "sameAs": [
+        "https://wa.me/237677379697"
+      ]
+    }
+    </script>
   </head>
   <body>
     <header class="site-header" id="top">
@@ -262,6 +312,7 @@
                 <textarea id="visitorMessage" rows="4" placeholder="Précisez vos besoins : repas, groupe, enfant, camping, guide, langue..."></textarea>
               </label>
               <button class="btn primary full" type="submit" data-i18n="formSubmit">Envoyer sur WhatsApp</button>
+              <p class="form-status full" id="bookingStatus" role="status" aria-live="polite"></p>
             </form>
           </div>
           <aside class="contact-card">

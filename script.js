@@ -319,7 +319,7 @@ function renderGallery() {
       <figcaption class="gallery-caption">${localize(label)}</figcaption>
     </figure>
   `).join('');
-  target.querySelectorAll('.gallery-item').forEach(item => item.addEventListener('click', () => openLightbox(item.dataset.img, item.dataset.caption)));
+  target.querySelectorAll('.gallery-item').forEach(item => item.addEventListener('click', () => openLightbox(item.dataset.img, item.dataset.caption, item)));
 }
 
 function renderFaqs() {
@@ -336,33 +336,52 @@ function renderBookingOptions() {
   target.innerHTML = [...packageOptions, ...priceOptions].map(x => `<option value="${x}">${x}</option>`).join('');
 }
 
-function renderAll(){ renderActivities(); renderPackages(); renderItineraries(); renderPracticalCards(); renderPrices(); renderGallery(); renderFaqs(); renderBookingOptions(); }
+function renderAll(){ renderActivities(); renderPackages(); renderItineraries(); renderPracticalCards(); renderPrices(); renderGallery(); renderFaqs(); renderBookingOptions(); initScrollReveal(); }
+
+let revealObserver = null;
+function initScrollReveal() {
+  const targets = document.querySelectorAll('.section-heading, .activity-card, .package-card, .itinerary-card, .practical-card, .note-card, .faq-card, .gallery-item, .booking-card, .contact-card');
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('reveal', 'in-view'));
+    return;
+  }
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+  }
+  targets.forEach(el => {
+    if (!el.classList.contains('in-view')) {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    }
+  });
+}
+
+function initActiveNav() {
+  const sections = ['discover', 'activities', 'packages', 'itineraries', 'prices', 'gallery', 'booking']
+    .map(id => document.getElementById(id)).filter(Boolean);
+  const links = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (!sections.length || !links.length || !('IntersectionObserver' in window)) return;
+  const setActive = (id) => {
+    links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+  };
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach(section => navObserver.observe(section));
+}
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     state.lang = btn.dataset.lang;
     localStorage.setItem('ebogo-lang', state.lang);
-    
-function openLightbox(img, caption) {
-  const box = document.getElementById('lightbox');
-  if (!box) return;
-  document.getElementById('lightboxImg').src = `assets/images/${img}`;
-  document.getElementById('lightboxCaption').textContent = caption;
-  box.classList.add('open');
-  box.setAttribute('aria-hidden', 'false');
-}
-
-const lightbox = document.getElementById('lightbox');
-if (lightbox) {
-  lightbox.addEventListener('click', (event) => {
-    if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-    }
-  });
-}
-
-applyTranslations();
+    applyTranslations();
   });
 });
 
@@ -387,8 +406,11 @@ toggle.addEventListener('click', () => {
 });
 menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.remove('open')));
 
-document.getElementById('bookingForm').addEventListener('submit', (event) => {
+const bookingForm = document.getElementById('bookingForm');
+const bookingStatus = document.getElementById('bookingStatus');
+bookingForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  if (!bookingForm.reportValidity()) return;
   const name = document.getElementById('visitorName').value.trim();
   const people = document.getElementById('visitorPeople').value;
   const date = document.getElementById('visitorDate').value;
@@ -398,26 +420,46 @@ document.getElementById('bookingForm').addEventListener('submit', (event) => {
   const msg = document.getElementById('visitorMessage').value.trim();
   const body = t[state.lang].bookingMessage({name, people, date, offer, meal, language, msg});
   window.open(`https://wa.me/237677379697?text=${body}`, '_blank', 'noopener,noreferrer');
+  if (bookingStatus) {
+    bookingStatus.classList.remove('error');
+    bookingStatus.textContent = state.lang === 'fr'
+      ? `Merci ${name || ''} ! WhatsApp s'ouvre dans un nouvel onglet — il ne reste qu'à envoyer le message.`
+      : `Thank you ${name || ''}! WhatsApp is opening in a new tab — just send the message.`;
+  }
 });
 
-
-function openLightbox(img, caption) {
+let lastFocusedElement = null;
+function openLightbox(img, caption, trigger) {
   const box = document.getElementById('lightbox');
   if (!box) return;
+  lastFocusedElement = trigger || document.activeElement;
   document.getElementById('lightboxImg').src = `assets/images/${img}`;
   document.getElementById('lightboxCaption').textContent = caption;
   box.classList.add('open');
   box.setAttribute('aria-hidden', 'false');
+  const closeBtn = box.querySelector('.lightbox-close');
+  if (closeBtn) closeBtn.focus();
+}
+
+function closeLightbox() {
+  const box = document.getElementById('lightbox');
+  if (!box) return;
+  box.classList.remove('open');
+  box.setAttribute('aria-hidden', 'true');
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') lastFocusedElement.focus();
 }
 
 const lightbox = document.getElementById('lightbox');
 if (lightbox) {
   lightbox.addEventListener('click', (event) => {
     if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
+      closeLightbox();
     }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
   });
 }
 
 applyTranslations();
+initActiveNav();
