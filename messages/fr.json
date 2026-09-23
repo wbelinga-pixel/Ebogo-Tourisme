@@ -15,6 +15,57 @@
     "pageTitle": "Que faire à Ebogo ?",
     "pageLead": "Sept façons de découvrir le fleuve, la forêt et les savoirs locaux — en pirogue, à pied ou en immersion culturelle."
   },
+  "activityDetail": {
+    "priceLabel": "À partir de",
+    "durationLabel": "Durée",
+    "seasonLabel": "Saison"
+  },
+  "infos": {
+    "pageEyebrow": "Guide pratique",
+    "pageTitle": "Préparer sa visite",
+    "pageLead": "Ebogo est une expérience de nature : la meilleure visite se prépare avec un guide, une tenue adaptée et une réservation confirmée.",
+    "accessHeading": "Accès",
+    "seasonsHeading": "Saisons",
+    "bringHeading": "Quoi emporter",
+    "foodHeading": "Restauration",
+    "stayHeading": "Hébergement",
+    "faqHeading": "Questions fréquentes"
+  },
+  "village": {
+    "pageEyebrow": "Le village",
+    "pageTitle": "Ebogo et la Commune de Mengueme",
+    "historyHeading": "Histoire du site",
+    "engagementHeading": "Engagement écotouristique"
+  },
+  "reserver": {
+    "pageEyebrow": "Réservation",
+    "pageTitle": "Préparer votre visite",
+    "pageLead": "Remplissez ce formulaire ou écrivez directement sur WhatsApp : nous confirmons le guide, le circuit, la saison et le tarif final.",
+    "whatsappHeading": "Réponse la plus rapide",
+    "whatsappCta": "Écrire sur WhatsApp",
+    "formHeading": "Ou remplissez le formulaire",
+    "formName": "Nom complet",
+    "formNamePlaceholder": "Votre nom",
+    "formEmail": "E-mail",
+    "formEmailPlaceholder": "vous@exemple.com",
+    "formDate": "Date souhaitée",
+    "formPeople": "Nombre de personnes",
+    "formActivity": "Activité",
+    "formLanguage": "Langue du guide",
+    "formLanguageFr": "Français",
+    "formLanguageEn": "Anglais",
+    "formLanguageBoth": "Français ou anglais",
+    "formMessage": "Message complémentaire",
+    "formMessagePlaceholder": "Précisez vos besoins : repas, groupe, enfant, camping…",
+    "formSubmit": "Envoyer la demande",
+    "formSubmitting": "Envoi en cours…",
+    "formSuccessTitle": "Merci !",
+    "formSuccessBody": "Votre demande a été transmise par e-mail. Vous pouvez aussi confirmer directement sur WhatsApp pour une réponse plus rapide.",
+    "formErrorTitle": "L'envoi par e-mail a échoué",
+    "formErrorBody": "Vous pouvez tout de même envoyer votre demande directement sur WhatsApp ci-dessus.",
+    "formRequired": "Ce champ est requis.",
+    "formInvalidEmail": "Adresse e-mail invalide."
+  },
   "footer": {
     "contactHeading": "Contact",
     "navHeading": "Le site",

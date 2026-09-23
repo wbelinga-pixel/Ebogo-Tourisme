@@ -15,6 +15,57 @@
     "pageTitle": "What can you do in Ebogo?",
     "pageLead": "Seven ways to discover the river, the forest and local knowledge — by canoe, on foot or through cultural immersion."
   },
+  "activityDetail": {
+    "priceLabel": "From",
+    "durationLabel": "Duration",
+    "seasonLabel": "Season"
+  },
+  "infos": {
+    "pageEyebrow": "Practical guide",
+    "pageTitle": "Plan your visit",
+    "pageLead": "Ebogo is a nature experience: the best visit is prepared with a guide, suitable clothing and a confirmed booking.",
+    "accessHeading": "Access",
+    "seasonsHeading": "Seasons",
+    "bringHeading": "What to bring",
+    "foodHeading": "Food",
+    "stayHeading": "Lodging",
+    "faqHeading": "Frequently asked questions"
+  },
+  "village": {
+    "pageEyebrow": "The village",
+    "pageTitle": "Ebogo and the Commune of Mengueme",
+    "historyHeading": "History of the site",
+    "engagementHeading": "Ecotourism commitment"
+  },
+  "reserver": {
+    "pageEyebrow": "Booking",
+    "pageTitle": "Plan your visit",
+    "pageLead": "Fill in this form or write directly on WhatsApp: we'll confirm the guide, the route, the season and the final price.",
+    "whatsappHeading": "Fastest response",
+    "whatsappCta": "Message on WhatsApp",
+    "formHeading": "Or fill in the form",
+    "formName": "Full name",
+    "formNamePlaceholder": "Your name",
+    "formEmail": "Email",
+    "formEmailPlaceholder": "you@example.com",
+    "formDate": "Preferred date",
+    "formPeople": "Number of people",
+    "formActivity": "Activity",
+    "formLanguage": "Guide language",
+    "formLanguageFr": "French",
+    "formLanguageEn": "English",
+    "formLanguageBoth": "French or English",
+    "formMessage": "Additional message",
+    "formMessagePlaceholder": "Tell us what you need: meals, group, child, camping…",
+    "formSubmit": "Send request",
+    "formSubmitting": "Sending…",
+    "formSuccessTitle": "Thank you!",
+    "formSuccessBody": "Your request was sent by email. You can also confirm directly on WhatsApp for a faster reply.",
+    "formErrorTitle": "Sending by email failed",
+    "formErrorBody": "You can still send your request directly on WhatsApp above.",
+    "formRequired": "This field is required.",
+    "formInvalidEmail": "Invalid email address."
+  },
   "footer": {
     "contactHeading": "Contact",
     "navHeading": "The site",
