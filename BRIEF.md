@@ -149,3 +149,18 @@ Ces éléments sont réutilisés comme contenu de départ (plus fiables que les 
 | `hero-river`, `aerial-forest`, `aerial-nyong`, `nyong-island` | 1024×768 | **Trop petites pour un hero plein écran** — visiblement floues si étirées sur desktop. À ne pas utiliser en fond plein écran tant que des originaux plus grands ne sont pas fournis. |
 
 Aucune de ces photos n'atteint une définition vraiment « HD » (2400 px+) au sens strict pour un hero plein écran sur grand moniteur — c'est un compromis acceptable pour démarrer, pas la qualité finale visée. **Si des fichiers originaux existent quelque part (téléphone, appareil photo, cloud du prestataire), les récupérer et les déposer dans `public/images/` avant l'étape 3 (page d'accueil)** plutôt qu'après la mise en page, pour éviter de recadrer une seconde fois.
+
+## Vérification du poids de page (étape 6)
+
+Mesuré au chargement (viewport mobile 390px, build de production `next start`, poids réel transféré sur le réseau — compression gzip comprise, pas la taille décompressée) :
+
+| Page | Poids réel transféré |
+| --- | --- |
+| Accueil (`/`) | 428 Ko |
+| Activités (`/activites`) | 437 Ko |
+| Fiche activité (`/activites/[slug]`) | 462 Ko |
+| Réserver (`/reserver`) | 418 Ko |
+
+Toutes largement sous l'objectif de 1 Mo du brief.
+
+Un vrai problème a été trouvé et corrigé en mesurant : `react-hook-form` et `zod` (utilisés uniquement par le formulaire de `/reserver`) se retrouvaient dans un chunk JavaScript partagé, chargé sur **toutes** les pages — l'accueil et `/activites` chargeaient inutilement le même paquet que `/reserver`. Corrigé avec `next/dynamic` (`ssr:false`) dans `src/components/booking-form-lazy.tsx`, qui force un point de coupure que Turbopack ne regroupe plus avec le reste. Gain mesuré : environ 400 Ko en moins sur l'accueil et les activités.

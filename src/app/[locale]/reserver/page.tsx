@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getContent, type Locale } from "@/content";
 import { Eyebrow } from "@/components/eyebrow";
 import { Button } from "@/components/ui/button";
-import { BookingForm } from "@/components/booking-form";
+import { BookingFormLazy } from "@/components/booking-form-lazy";
 import { alternatesFor } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -56,7 +56,7 @@ export default async function ReserverPage({
 
       <h2 className="mt-12">{t("formHeading")}</h2>
       <div className="mt-6">
-        <BookingForm
+        <BookingFormLazy
           whatsappNumber={whatsappNumber}
           activityOptions={activities.map((a) => a.title)}
         />

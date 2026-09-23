@@ -88,7 +88,7 @@ export default async function ActivityDetailPage({
               <h2 className="mt-10">{t("galleryHeading")}</h2>
               <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                 {activity.gallery.map((img) => (
-                  <Photo key={img} src={`/images/${img}`} alt="" ratio="aspect-square" />
+                  <Photo key={img} src={`/images/${img}`} alt={activity.title} ratio="aspect-square" />
                 ))}
               </div>
             </>

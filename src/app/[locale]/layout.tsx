@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 
 import { routing, type Locale } from "@/i18n/routing";
 import { alternatesFor, siteUrl } from "@/lib/seo";
+import { getContent } from "@/content";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyBookBar } from "@/components/sticky-book-bar";
@@ -43,6 +44,15 @@ export async function generateMetadata({
     title: { default: t("name"), template: `%s | ${t("name")}` },
     description: t("tagline"),
     alternates: alternatesFor("/"),
+    openGraph: {
+      siteName: t("name"),
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      type: "website",
+      images: ["/images/culture-river.webp"],
+    },
+    twitter: {
+      card: "summary_large_image",
+    },
   };
 }
 
@@ -58,10 +68,42 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
+  const { site } = getContent(locale as Locale);
+
+  // Données structurées TouristAttraction (Schema.org), demandées par le
+  // brief. Coordonnées géo APPROXIMATIVES (centre du village d'Ebogo) — à
+  // remplacer par le point GPS exact avant publication, voir BRIEF.md.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: site.name,
+    description: site.tagline,
+    url: `${siteUrl}/${locale}`,
+    image: `${siteUrl}/images/culture-river.webp`,
+    telephone: site.contact.whatsappDisplay,
+    email: site.contact.email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ebogo, Mengueme",
+      addressRegion: "Région du Centre",
+      addressCountry: "CM",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 3.3167,
+      longitude: 11.55,
+    },
+    sameAs: [site.contact.whatsappLink],
+  };
 
   return (
     <html lang={locale} className={`${fraunces.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <NextIntlClientProvider>
           <SiteHeader />
           <main>{children}</main>
