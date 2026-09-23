@@ -1,0 +1,9 @@
+export { site } from "./site";
+export { activities } from "./activities";
+export { pricing } from "./pricing";
+export { packages } from "./packages";
+export { itineraries } from "./itineraries";
+export { village } from "./village";
+export { info } from "./info";
+export { gallery } from "./gallery";
+export { testimonials } from "./testimonials";
