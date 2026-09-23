@@ -1,0 +1,38 @@
+{
+  "site": {
+    "name": "Ebogo Tourisme",
+    "tagline": "Le fleuve Nyong, en pirogue et à pied"
+  },
+  "home": {
+    "placeholder": "Page d'accueil complète à venir (étape 3 du brief).",
+    "styleguideLink": "Voir le guide de style"
+  },
+  "nav": {
+    "home": "Accueil",
+    "activities": "Activités",
+    "info": "Préparer sa visite",
+    "village": "Le village",
+    "book": "Réserver"
+  },
+  "styleguide": {
+    "title": "Guide de style",
+    "intro": "Aperçu des tokens de couleur, de la typographie et des composants de base avant de construire les pages.",
+    "colorsHeading": "Couleurs",
+    "typeHeading": "Typographie",
+    "buttonsHeading": "Boutons",
+    "cardsHeading": "Cartes",
+    "colorBackground": "Fond",
+    "colorForeground": "Texte",
+    "colorPrimary": "Primaire",
+    "colorAccent": "Accent",
+    "colorWater": "Eau",
+    "sampleCardTitle": "Balade en pirogue",
+    "sampleCardDescription": "1 h 30 · sur le Nyong",
+    "sampleCardBody": "Une navigation calme entre les sous-bois inondés, avec un guide local.",
+    "sampleCardCta": "Voir l'activité",
+    "buttonPrimary": "Réserver une visite",
+    "buttonOutline": "Voir les activités",
+    "buttonAccent": "Demander un devis",
+    "buttonGhost": "En savoir plus"
+  }
+}

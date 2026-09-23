@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+/*
+  Design tokens — Direction artistique du BRIEF.md.
+  Aucune couleur ou rayon ne doit être écrit en dur ailleurs : tout passe par ces variables.
+*/
+:root {
+  --color-background: #faf7f2; /* Fond — blanc cassé chaud */
+  --color-foreground: #12211b; /* Texte — vert-noir profond */
+  --color-primary: #1f4d3a; /* Primaire — vert forêt */
+  --color-primary-foreground: #faf7f2;
+  --color-accent: #b4562a; /* Accent — terre de latérite */
+  --color-accent-foreground: #faf7f2;
+  --color-water: #6e8f82; /* Eau — vert-eau désaturé */
+  --color-water-foreground: #12211b;
+  --color-border: color-mix(in srgb, var(--color-foreground) 14%, transparent);
+  --color-muted: color-mix(in srgb, var(--color-foreground) 6%, var(--color-background));
+  --color-muted-foreground: color-mix(in srgb, var(--color-foreground) 62%, var(--color-background));
+
+  --radius: 0.5rem; /* 8px, comme demandé dans le brief */
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-water: var(--color-water);
+  --color-water-foreground: var(--color-water-foreground);
+  --color-border: var(--color-border);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

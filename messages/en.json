@@ -1,0 +1,38 @@
+{
+  "site": {
+    "name": "Ebogo Tourisme",
+    "tagline": "The Nyong River, by canoe and on foot"
+  },
+  "home": {
+    "placeholder": "Full home page coming in brief step 3.",
+    "styleguideLink": "View the style guide"
+  },
+  "nav": {
+    "home": "Home",
+    "activities": "Activities",
+    "info": "Plan your visit",
+    "village": "The village",
+    "book": "Book"
+  },
+  "styleguide": {
+    "title": "Style guide",
+    "intro": "Overview of color tokens, typography and base components before building the pages.",
+    "colorsHeading": "Colors",
+    "typeHeading": "Typography",
+    "buttonsHeading": "Buttons",
+    "cardsHeading": "Cards",
+    "colorBackground": "Background",
+    "colorForeground": "Text",
+    "colorPrimary": "Primary",
+    "colorAccent": "Accent",
+    "colorWater": "Water",
+    "sampleCardTitle": "Canoe tour",
+    "sampleCardDescription": "1h30 · on the Nyong",
+    "sampleCardBody": "A calm ride through the flooded forest paths, with a local guide.",
+    "sampleCardCta": "View activity",
+    "buttonPrimary": "Book a visit",
+    "buttonOutline": "View activities",
+    "buttonAccent": "Request a quote",
+    "buttonGhost": "Learn more"
+  }
+}
