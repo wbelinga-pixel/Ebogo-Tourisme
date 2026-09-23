@@ -9,13 +9,18 @@ import { Button } from "@/components/ui/button";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { cn } from "@/lib/utils";
 
-const navItems = ["home", "activities", "info", "village"] as const;
+const navItems = [
+  { key: "home", href: "/" },
+  { key: "activities", href: "/activites" },
+  { key: "info", href: "/infos" },
+  { key: "village", href: "/village" },
+] as const;
 
 /**
- * En-tête du site : logo, navigation, sélecteur de langue et le SEUL
- * bouton en accent (latérite) de la page — la réservation. Aperçu utilisé
- * dans /styleguide ; réutilisé tel quel dans la mise en page réelle aux
- * étapes 3-4.
+ * En-tête du site : logo, navigation et sélecteur de langue. Le bouton
+ * accent (latérite) de réservation n'apparaît ici QUE sur desktop — sur
+ * mobile, c'est StickyBookBar (barre fixe en bas, toujours visible) qui en
+ * porte l'unique exemplaire, pas un bouton caché dans ce menu.
  */
 export function SiteHeader({
   forceMobile = false,
@@ -33,15 +38,15 @@ export function SiteHeader({
   const mobileVisibility = forceMobile ? "flex" : "flex md:hidden";
 
   return (
-    <header className="relative border-b border-border bg-background">
+    <header className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <Link href="/" className="font-serif text-lg" style={{ fontVariationSettings: '"opsz" 32' }}>
           {tSite("name")}
         </Link>
 
         <nav className={cn("items-center gap-6 text-sm font-medium", desktopVisibility)}>
-          {navItems.map((key) => (
-            <Link key={key} href="/" className="text-foreground/80 transition-colors hover:text-foreground">
+          {navItems.map(({ key, href }) => (
+            <Link key={key} href={href} className="text-foreground/80 transition-colors hover:text-foreground">
               {t(key)}
             </Link>
           ))}
@@ -50,7 +55,7 @@ export function SiteHeader({
         <div className={cn("items-center gap-3", desktopVisibility)}>
           <LocaleSwitcher />
           <Button variant="accent" size="sm" asChild>
-            <Link href="/">{t("book")}</Link>
+            <Link href="/reserver">{t("book")}</Link>
           </Button>
         </div>
 
@@ -68,10 +73,10 @@ export function SiteHeader({
       {open && (
         <div className={cn("border-t border-border bg-background px-6 py-4", mobileVisibility.replace("flex", "block"))}>
           <nav className="flex flex-col gap-1 text-base font-medium">
-            {navItems.map((key) => (
+            {navItems.map(({ key, href }) => (
               <Link
                 key={key}
-                href="/"
+                href={href}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-3 text-foreground/80 hover:bg-muted hover:text-foreground"
               >
@@ -79,11 +84,8 @@ export function SiteHeader({
               </Link>
             ))}
           </nav>
-          <div className="mt-4 flex items-center justify-between gap-3">
+          <div className="mt-4">
             <LocaleSwitcher />
-            <Button variant="accent" size="sm" asChild className="flex-1">
-              <Link href="/">{t("book")}</Link>
-            </Button>
           </div>
         </div>
       )}

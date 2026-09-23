@@ -46,11 +46,9 @@ export default async function StyleguidePage({
   const t = await getTranslations("styleguide");
 
   return (
-    <main>
-      {/* En-tête & navigation */}
-      <section>
-        <SiteHeader />
-      </section>
+    <div>
+      {/* Le header et le footer réels viennent du layout global — cette
+          page en affiche des APERÇUS plus bas, dans "En-tête & navigation". */}
 
       {/* Hero — la pièce qui décide du look */}
       <section className="relative flex min-h-[70vh] items-end overflow-hidden">
@@ -99,6 +97,16 @@ export default async function StyleguidePage({
                 {t("navMobileLabel")}
               </p>
               <SiteHeader forceMobile defaultOpen />
+            </div>
+            <div className="relative h-24 w-[380px] max-w-full overflow-hidden rounded-lg border border-border">
+              <p className="absolute inset-x-0 top-0 z-10 border-b border-border bg-muted px-4 py-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                {t("navStickyBarLabel")}
+              </p>
+              <div className="absolute inset-x-0 bottom-0 border-t border-border bg-background p-3">
+                <Button variant="accent" size="lg" className="w-full">
+                  {t("buttonAccent")}
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -274,6 +282,6 @@ export default async function StyleguidePage({
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

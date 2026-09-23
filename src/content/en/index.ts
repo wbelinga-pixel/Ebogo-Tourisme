@@ -1,4 +1,5 @@
 export { site } from "./site";
+export { home } from "./home";
 export { activities } from "./activities";
 export { pricing } from "./pricing";
 export { packages } from "./packages";

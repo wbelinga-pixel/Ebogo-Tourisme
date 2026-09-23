@@ -15,6 +15,8 @@ type PhotoProps = Omit<ImageProps, "fill" | "className"> & {
   overlay?: boolean;
   /** Légende posée en bas de l'image, au-dessus du voile. */
   caption?: string;
+  /** object-position CSS, pour recadrer sur le vrai sujet quand il n'est pas centré. */
+  focus?: string;
   className?: string;
   sizes?: string;
 };
@@ -31,6 +33,7 @@ export function Photo({
   bleed = false,
   overlay = false,
   caption,
+  focus,
   className,
   sizes = "(min-width: 768px) 50vw, 100vw",
   alt,
@@ -44,7 +47,14 @@ export function Photo({
         className,
       )}
     >
-      <Image alt={alt} fill sizes={sizes} className="object-cover" {...props} />
+      <Image
+        alt={alt}
+        fill
+        sizes={sizes}
+        className="object-cover"
+        style={focus ? { objectPosition: focus } : undefined}
+        {...props}
+      />
       {overlay && (
         <div
           aria-hidden

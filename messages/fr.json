@@ -3,9 +3,22 @@
     "name": "Ebogo Tourisme",
     "tagline": "Le fleuve Nyong, en pirogue et à pied"
   },
-  "home": {
-    "placeholder": "Page d'accueil complète à venir (étape 3 du brief).",
-    "styleguideLink": "Voir le guide de style"
+  "activities": {
+    "viewCta": "Voir l'activité",
+    "includedHeading": "Ce qui est inclus",
+    "prepareHeading": "À prévoir",
+    "storyHeading": "Le récit",
+    "galleryHeading": "En images",
+    "backCta": "Toutes les activités",
+    "bookCta": "Réserver cette activité",
+    "pageEyebrow": "Expériences",
+    "pageTitle": "Que faire à Ebogo ?",
+    "pageLead": "Sept façons de découvrir le fleuve, la forêt et les savoirs locaux — en pirogue, à pied ou en immersion culturelle."
+  },
+  "footer": {
+    "contactHeading": "Contact",
+    "navHeading": "Le site",
+    "copyright": "© {year} {name}"
   },
   "nav": {
     "home": "Accueil",
@@ -20,6 +33,7 @@
     "navHeading": "En-tête & navigation",
     "navDesktopLabel": "Desktop",
     "navMobileLabel": "Mobile (menu ouvert)",
+    "navStickyBarLabel": "Barre de réservation fixe (mobile, toujours visible)",
     "heroEyebrow": "Ebogo · Fleuve Nyong",
     "heroTitle": "Là où la forêt rencontre l'eau lente.",
     "heroCta": "Réserver une visite",

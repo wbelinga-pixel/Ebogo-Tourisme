@@ -24,10 +24,22 @@ export interface ActivityContent {
   title: string;
   summary: string;
   image: string;
+  /**
+   * Point de cadrage CSS object-position (ex. "center 15%") quand le sujet
+   * intéressant n'est pas centré dans la photo — ex. canoe-guide.webp est un
+   * selfie de visiteur où le vrai sujet (le guide, les pirogues) est en haut
+   * de l'image, pas au centre. Par défaut : "center".
+   */
+  imageFocus?: string;
   /** Uniquement rempli quand l'information est vérifiée — jamais devinée. */
   duration?: string;
   season?: string;
   priceFrom?: string;
+  /** Contenu de la fiche détaillée /activites/[slug]. */
+  story?: string;
+  gallery?: string[];
+  included?: string[];
+  prepare?: string[];
 }
 
 export interface PriceRow {
@@ -117,4 +129,25 @@ export interface TestimonialContent {
   name: string;
   context: string;
   quote: string;
+}
+
+export interface HomeContent {
+  heroEyebrow: string;
+  heroTitle: string;
+  heroCta: string;
+  activitiesEyebrow: string;
+  activitiesTitle: string;
+  activitiesCta: string;
+  /** Slugs pointant vers activities.ts (voisin dans le même dossier de langue) — pas de duplication de contenu. */
+  featuredActivitySlugs: string[];
+  accessEyebrow: string;
+  accessTitle: string;
+  accessBody: string;
+  accessCta: string;
+  testimonialsEyebrow: string;
+  testimonialsTitle: string;
+  ctaEyebrow: string;
+  ctaTitle: string;
+  ctaBody: string;
+  ctaCta: string;
 }

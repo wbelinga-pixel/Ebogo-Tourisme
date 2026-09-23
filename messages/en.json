@@ -3,9 +3,22 @@
     "name": "Ebogo Tourisme",
     "tagline": "The Nyong River, by canoe and on foot"
   },
-  "home": {
-    "placeholder": "Full home page coming in brief step 3.",
-    "styleguideLink": "View the style guide"
+  "activities": {
+    "viewCta": "View activity",
+    "includedHeading": "What's included",
+    "prepareHeading": "What to prepare",
+    "storyHeading": "The story",
+    "galleryHeading": "In pictures",
+    "backCta": "All activities",
+    "bookCta": "Book this activity",
+    "pageEyebrow": "Experiences",
+    "pageTitle": "What can you do in Ebogo?",
+    "pageLead": "Seven ways to discover the river, the forest and local knowledge — by canoe, on foot or through cultural immersion."
+  },
+  "footer": {
+    "contactHeading": "Contact",
+    "navHeading": "The site",
+    "copyright": "© {year} {name}"
   },
   "nav": {
     "home": "Home",
@@ -20,6 +33,7 @@
     "navHeading": "Header & navigation",
     "navDesktopLabel": "Desktop",
     "navMobileLabel": "Mobile (menu open)",
+    "navStickyBarLabel": "Fixed booking bar (mobile, always visible)",
     "heroEyebrow": "Ebogo · Nyong River",
     "heroTitle": "Where the forest meets slow water.",
     "heroCta": "Book a visit",

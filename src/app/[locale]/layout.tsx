@@ -4,8 +4,11 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { alternatesFor, siteUrl } from "@/lib/seo";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { StickyBookBar } from "@/components/sticky-book-bar";
 import "../globals.css";
 
 const fraunces = Fraunces({
@@ -59,7 +62,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${fraunces.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter locale={locale as Locale} />
+          <StickyBookBar />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
