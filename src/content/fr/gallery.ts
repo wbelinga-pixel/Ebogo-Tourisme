@@ -1,7 +1,7 @@
 import type { GalleryItemContent } from "../types";
 
 export const gallery: GalleryItemContent[] = [
-  { image: "aerial-nyong.webp", caption: "Vue aérienne du Nyong" },
+  { image: "rock-refuge.webp", caption: "Abri rocheux dans la forêt" },
   { image: "canoe-village.webp", caption: "Arrivée en pirogue" },
   { image: "giant-tree.webp", caption: "Gros arbre et sous-bois" },
   { image: "culture-river.webp", caption: "Scène culturelle au bord du fleuve" },

@@ -16,7 +16,7 @@ export const activities: ActivityContent[] = [
     priceFrom: "10 000 FCFA par pirogue",
     story:
       "La pirogue est la façon la plus directe de comprendre Ebogo : le fleuve mène à la plupart des autres sites (Île aux Perroquets, Gros Arbre, grottes, Village de Campement). Les circuits vont d'un petit sous-bois de 30 minutes à une boucle de près de 3 heures combinant plusieurs étapes.",
-    gallery: ["canoe-village.webp", "canoe-reflection.webp", "aerial-nyong.webp"],
+    gallery: ["canoe-village.webp", "canoe-reflection.webp"],
     included: ["Pirogue et guide local", "Charge normale : 2 adultes + 1 enfant de moins de 6 ans par pirogue"],
     prepare: ["Tenue légère et protection soleil/pluie", "Confirmer le nombre de pirogues nécessaire avant le départ"],
   },
@@ -41,11 +41,11 @@ export const activities: ActivityContent[] = [
     title: "Grottes & refuges",
     summary:
       "Explorez les grottes, les abris rocheux, la grotte à roussettes et les lieux chargés de mémoire du site.",
-    image: "grotte-sousbois.webp",
+    image: "grotte-refuge.webp",
     priceFrom: "5 000 FCFA par personne (visite de grotte)",
     story:
       "Plusieurs grottes et abris rocheux ponctuent le site, dont la Grotte d'Akomvié et une grotte à roussettes. Certaines s'atteignent en pirogue (Grotte des pêcheurs), d'autres à pied.",
-    gallery: ["grotte-sousbois.webp", "grotte-refuge.webp", "rock-refuge.webp"],
+    gallery: ["grotte-sousbois.webp"],
     included: ["Guide local"],
     prepare: ["Chaussures adaptées à la marche en sous-bois"],
   },
@@ -55,11 +55,11 @@ export const activities: ActivityContent[] = [
     title: "Sentier botanique",
     summary:
       "Randonnée pédestre guidée en forêt, entre sous-bois et essences remarquables — jusqu'à 5 personnes par guide.",
-    image: "aerial-forest.webp",
+    image: "grotte-sousbois.webp",
     priceFrom: "2 000 FCFA par personne",
     story:
       "Une marche accompagnée dans la forêt d'Ebogo, pour observer les essences locales à un rythme plus lent que les circuits en pirogue. Adaptée aux groupes scolaires et universitaires.",
-    gallery: ["aerial-forest.webp"],
+    gallery: ["grotte-sousbois.webp"],
     included: ["Guide, maximum 5 personnes par guide"],
     prepare: ["Eau et chaussures de marche"],
   },
@@ -84,12 +84,12 @@ export const activities: ActivityContent[] = [
     title: "Oiseaux, papillons et Île aux Perroquets",
     summary:
       "Observation d'oiseaux et de papillons, avec une étape en pirogue jusqu'à l'Île aux Perroquets et l'embouchure du So'o.",
-    image: "nyong-island.webp",
+    image: "rapids.webp",
     duration: "1 h",
     priceFrom: "5 000 FCFA par personne",
     story:
       "Une sortie plus contemplative, entre observation d'oiseaux, de papillons et une étape en pirogue jusqu'à l'Île aux Perroquets, à l'embouchure du So'o dans le Nyong.",
-    gallery: ["nyong-island.webp", "aerial-nyong.webp"],
+    gallery: ["rapids.webp"],
     included: ["Trajet en pirogue jusqu'à l'Île aux Perroquets"],
     prepare: ["Jumelles si vous en avez", "Tenue discrète pour l'observation"],
   },

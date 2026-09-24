@@ -22,7 +22,7 @@ export async function generateMetadata({
       title: t("pageTitle"),
       description: village.porteur,
       url: `${siteUrl}/${locale}/village`,
-      images: ["/images/aerial-forest.webp"],
+      images: ["/images/rock-refuge.webp"],
     },
   };
 }
@@ -40,7 +40,7 @@ export default async function VillagePage({
   return (
     <div>
       <section className="relative flex min-h-[45vh] items-end overflow-hidden">
-        <Photo src="/images/aerial-forest.webp" alt="" bleed overlay priority sizes="100vw" />
+        <Photo src="/images/rock-refuge.webp" alt="" bleed overlay priority sizes="100vw" />
         <div className="relative z-10 mx-auto w-full max-w-3xl px-6 pb-12 pt-24 text-white">
           <Eyebrow className="!text-white/80">{t("pageEyebrow")}</Eyebrow>
           <h1 className="mt-3 text-white">{t("pageTitle")}</h1>

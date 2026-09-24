@@ -16,7 +16,7 @@ export const activities: ActivityContent[] = [
     priceFrom: "10,000 FCFA per canoe",
     story:
       "The canoe is the most direct way to understand Ebogo: the river leads to most of the other sites (Parrot Island, the Giant Tree, caves, the Camp Village). Routes range from a 30-minute short forest path to a near-3-hour loop combining several stops.",
-    gallery: ["canoe-village.webp", "canoe-reflection.webp", "aerial-nyong.webp"],
+    gallery: ["canoe-village.webp", "canoe-reflection.webp"],
     included: ["Canoe and local guide", "Normal capacity: 2 adults + 1 child under 6 per canoe"],
     prepare: ["Light clothing and sun/rain protection", "Confirm the number of canoes needed before departure"],
   },
@@ -40,11 +40,11 @@ export const activities: ActivityContent[] = [
     kicker: "Nature",
     title: "Caves & shelters",
     summary: "Explore caves, rock shelters, the bat cave and places filled with local memory.",
-    image: "grotte-sousbois.webp",
+    image: "grotte-refuge.webp",
     priceFrom: "5,000 FCFA per person (cave visit)",
     story:
       "Several caves and rock shelters punctuate the site, including Akomvié Cave and a bat cave. Some are reached by canoe (Fishermen's Cave), others on foot.",
-    gallery: ["grotte-sousbois.webp", "grotte-refuge.webp", "rock-refuge.webp"],
+    gallery: ["grotte-sousbois.webp"],
     included: ["Local guide"],
     prepare: ["Shoes suited to walking on forest paths"],
   },
@@ -54,11 +54,11 @@ export const activities: ActivityContent[] = [
     title: "Botanical trail",
     summary:
       "Guided walking tour through the forest, among forest paths and remarkable species — up to 5 people per guide.",
-    image: "aerial-forest.webp",
+    image: "grotte-sousbois.webp",
     priceFrom: "2,000 FCFA per person",
     story:
       "A guided walk through Ebogo's forest, to observe local plant species at a slower pace than the canoe routes. Well suited to school and university groups.",
-    gallery: ["aerial-forest.webp"],
+    gallery: ["grotte-sousbois.webp"],
     included: ["Guide, maximum 5 people per guide"],
     prepare: ["Water and walking shoes"],
   },
@@ -82,12 +82,12 @@ export const activities: ActivityContent[] = [
     title: "Birds, butterflies and Parrot Island",
     summary:
       "Birdwatching and butterfly watching, with a canoe stop at Parrot Island and the mouth of the So'o.",
-    image: "nyong-island.webp",
+    image: "rapids.webp",
     duration: "1 h",
     priceFrom: "5,000 FCFA per person",
     story:
       "A more contemplative outing, combining birdwatching, butterfly watching and a canoe stop at Parrot Island, where the So'o meets the Nyong.",
-    gallery: ["nyong-island.webp", "aerial-nyong.webp"],
+    gallery: ["rapids.webp"],
     included: ["Canoe ride to Parrot Island"],
     prepare: ["Binoculars if you have them", "Muted clothing for observation"],
   },
