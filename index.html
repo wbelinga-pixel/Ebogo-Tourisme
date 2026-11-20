@@ -175,24 +175,22 @@ ch5_lab:"Today",ch5_title:"The forest has kept the mark",ch5_p1:"For centuries, 
 // le selecteur de langue doit fonctionner meme sans cette section.
 const historyEl=document.getElementById('historyText');
 const historyFR=historyEl?historyEl.innerHTML:'';
-// TODO_À_VALIDER — contredit le récit français (Dieu au singulier).
-// Le bloc anglais ci-dessous n'est pas une traduction du récit français : c'est un
-// autre texte, dont l'origine reste à établir. Sa phrase « Not on the mountains where
-// the Gods would land their flying craft and speak to humans » parle de Dieux au
-// pluriel et d'engins volants, là où le récit français ne connaît que Zamba, venu une
-// seule fois. Laissé en l'état tant que la source n'est pas vérifiée : ne pas réécrire.
+// Traduction fidele du recit francais, lui-meme reproduit mot pour mot.
+// Remplace une version anglaise anterieure qui n'en etait pas une traduction et
+// parlait de Dieux au pluriel, ce que le recit contredit.
 const historyEN=`
 <span class="legend-kicker">CULTURAL HISTORY · PASSED DOWN FROM GENERATION TO GENERATION</span>
 <p class="eyebrow">EBOGO</p>
-<h2>Natural paradise:<br><em>where God set foot on Earth.</em></h2>
-<p>Ebogo is a sacred ecotourism village where nature, human settlement and the forest live in harmony. It is a place where the forest seems to display all its beauty. The legend says that this is the only place where God set foot on the solid ground of humankind. Not on the mountains where the Gods would land their flying craft and speak to humans. When God decided to set foot on human land for the first time, it was in Ebogo.</p>
-<div class="legend-pull">The name Ebogo comes from the expression <em>EVOALI'EBOG</em>: “the tired hip.”</div>
-<p>The name Ebogo comes from the expression <em>EVOALI'EBOG</em>, meaning “the tired hip.” The story tells that one of our ancestors, travelling at night in his canoe, saw a light in the forest. He came ashore to approach its source and discovered that it came from a very tall tree rising up toward the Heavens.</p>
-<p>Driven by curiosity, he began to climb it to understand what it was. But when he reached the first branch, the tree moved as if it were human. Panicking, the ancestor jumped to the ground and grabbed the sword at his hip. Believing he was facing a demon giant, an Emomoro, he attacked.</p>
-<p>But the giant was so powerful that with a single gust of forest wind he “broke” the ancestor’s hip to stop his charge. This is where the expression “á Voali'Ebog” comes from, literally meaning “to tire the hip.”</p>
-<p>Only afterward did the ancestor realize that he had tried to fight God himself, and that the enormous tree he thought he had seen was in fact the foot of Zamba — God. Fortunately, the Most High did not hold it against him. The ancestor bowed down before him and asked to be blessed.</p>
-<p>And so, according to the story, the forest throughout this area preserved an exceptional beauty and a soothing freshness that continue to draw visitors from around the world.</p>
-<p class="legend-note">This account is presented here as the cultural history of Ebogo as it has been passed down from generation to generation. On site, the guide continues this transmission by connecting the story to the places, the forest, the river and the memories of the village.</p>`;
+<h2>Evoali'Ebog</h2>
+<div class="legend-pull">A forest, a legend, a divine footprint.</div>
+<p>Ebogo is a sacred ecotourism village in Cameroon, where nature, human settlement and the forest form a fine harmony. It is a place where the forest is not merely observed: it is told, felt and revered. The legend says that when God decided to visit humankind, it was at Ebogo that he set foot.</p>
+<p>The name Ebogo is in fact the shortened form of the expression <em>EVOALI'EBOG</em>, which means: the tired hip, in the Fang-Apông language, called Ma-Dzô-NA. The Elders tell that this name was given to the place by one of the founding Ancestors of the Enoah nation, to commemorate his encounter with the divine.</p>
+<p>One night, as he travelled by canoe on the river, a strange light caught his attention. It seemed to come from deep within the forest that bordered the water. He came ashore to see what it was. The further he went, the more intense the light became. It was then that he came face to face with what looked like an immense tree. Its size surpassed anything he had seen before. The tree glittered, it was beautiful and very tall. Its crown vanished into the starry sky.</p>
+<p>Driven by curiosity, he set about climbing it to see. But a few metres up, the tree moved as though it were human. The ancestor, seized by panic, leapt to the ground and gripped, by reflex, the sword lodged at his hip. Believing he was dealing with a dangerous giant spirit (Emomoro), he charged into battle. But the giant tree was so powerful that with a single movement it raised a violent gust of wind which sent the ancestor flying far off, where he “broke” his hip. Hence the expression “Evoali'Ebog”, shortened to “Ebogo”, which means: where the hip was broken, or tired.</p>
+<p>The Patriarch was the High Priest of the brotherhood of the Enoah Guardians, charged with fighting Evil in whatever form it took. It is said that their strength is given by the ancestors themselves and that nothing withstands them. If he had therefore lost so easily against so exceptional a being, there was only one explanation: the great and massive tree he thought he had seen was none other than Zamba (God) in person, who had set his feet on the land of humans.</p>
+<p>Suddenly a feeling of terror overcame him; he fell to his knees, face to the Earth, and pleaded for the mercy of the Master of Heaven and Earth. For he realised with dread the grave error of having dared to fight against God. In a thunderous yet soothing voice, the Most High told him that he held nothing against him, still less for not having recognised him sooner. That he was merely on a courtesy visit, having taken a particular liking to this place.</p>
+<p>The ancestor, feeling honoured by such a presence, prostrated himself several times more and asked to be blessed, he and his people, promising to build a village at this spot in memory of this unprecedented encounter. This the Creator granted him. And so the forest, across the whole area of Ebogo, kept the mark of that legendary divine presence through an unmatched beauty and that sacredness which still give off a soothing freshness, drawing, for centuries and to this day, the curious from all over the world.</p>
+<p class="legend-note">An account passed down orally by the Elders of Ebogo and reproduced here word for word, without rewriting. On site, the guide continues this transmission by connecting the account to the places, the forest and the river.</p>`;
 
 function setLanguage(lang){
   document.documentElement.lang=lang;
