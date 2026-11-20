@@ -106,7 +106,11 @@ book_kicker:"PLAN YOUR TRIP",book_title:"Your next<br><em>experience starts here
 }
 };
 
-const historyFR=document.getElementById('historyText').innerHTML;
+// #historyText n'existe que si la section du recit est presente dans la page.
+// On capture la reference une seule fois et on la traite comme optionnelle :
+// le selecteur de langue doit fonctionner meme sans cette section.
+const historyEl=document.getElementById('historyText');
+const historyFR=historyEl?historyEl.innerHTML:'';
 const historyEN=`
 <span class="legend-kicker">CULTURAL HISTORY · PASSED DOWN FROM GENERATION TO GENERATION</span>
 <p class="eyebrow">EBOGO</p>
@@ -126,7 +130,7 @@ function setLanguage(lang){
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(t[k])el.textContent=t[k]});
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(t[k])el.innerHTML=t[k]});
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.dataset.i18nPlaceholder;if(t[k])el.placeholder=t[k]});
-  document.getElementById('historyText').innerHTML=lang==='en'?historyEN:historyFR;
+  if(historyEl) historyEl.innerHTML=lang==='en'?historyEN:historyFR;
   const langBtn=document.getElementById('lang');
   langBtn.textContent=lang==='en'?'FR':'EN';
   localStorage.setItem('ebogo-lang',lang);
