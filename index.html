@@ -7,6 +7,36 @@
 <meta name="description" content="Découvrez Ébogo, le fleuve Nyong, la forêt, les grottes, les rapides et les expériences guidées au Cameroun.">
 <title>Ébogo — Expérience écotouristique</title>
 <link rel="preload" as="image" href="assets/images/hero-river.webp" fetchpriority="high">
+<link rel="canonical" href="https://ebogo-tourisme.vercel.app/">
+<!-- Donnees structurees. Pas de propriete "geo" : les coordonnees exactes du site
+     ne sont pas connues, et une epingle approximative enverrait les visiteurs au
+     mauvais endroit. TouristAttraction reste valide sans geo. Seule l'adresse
+     administrative verifiee est declaree.
+     TODO_A_FOURNIR : latitude et longitude relevees sur place, a ajouter ici sous
+     la forme "geo": { "@type": "GeoCoordinates", "latitude": ..., "longitude": ... } -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TouristAttraction",
+ "name": "Ébogo — Escale écotouristique",
+ "description": "Village écotouristique sacré sur le fleuve Nyong : forêt, sous-bois inondés, grottes, rapides et visites guidées. Le lieu dont la légende d'Evoali'Ebog raconte l'origine.",
+ "url": "https://ebogo-tourisme.vercel.app/",
+ "image": "https://ebogo-tourisme.vercel.app/assets/images/hero-river.webp",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Village d'Ebogo, commune de Mengueme",
+  "addressLocality": "Ebogo",
+  "addressRegion": "Nyong-et-So'o, Centre",
+  "addressCountry": "CM"
+ },
+ "telephone": "+237676927644",
+ "availableLanguage": [
+  "fr",
+  "en"
+ ],
+ "isAccessibleForFree": false
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
